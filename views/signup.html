@@ -1,0 +1,66 @@
+<%- include ('./partials/header.html') %>
+<%- include ('./partials/alerts.html') %>
+
+<head>
+  <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script>
+    var myapp = angular.module('myapp', [])
+    myapp.controller('controller', function($scope) {
+      $scope.validate_form = function(event){
+        if($scope.username == undefined){
+          alert("Username Cannot Be Empty")
+        }
+        if($scope.password == undefined){
+          alert("Password Cannot Be Empty")
+        }
+        if($scope.email == undefined){
+          alert("Email Cannot Be Empty")
+        }
+        if($scope.code == undefined){
+          alert("Secret Code Cannot Be Empty")
+        }
+      }
+    })
+  </script>
+</head>
+
+<section ng-app="myapp" ng-controller="controller" id="usersignUpForm">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-header text-center">
+            <h4>Admin Sign Up</h4>
+          </div>
+          <div class="card-block">
+            <form class="p-3" action="/auth/admin-signup" method="POST">
+              <div class="form-group">
+                <label class="form-control-label">Pick a username</label>
+                <input type="text" name="username" ng-model="username" placeholder="Username" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-control-label">Email</label>
+                <input type="email" name="email" ng-model="email" placeholder="Email" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-control-label">Password</label>
+                <input type="password" name="password" ng-model="password" placeholder="Password" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-control-label">Secret Code</label>
+                <input type="text" name="adminCode" ng-model="secretcode" placeholder="Enter the secret code" class="form-control" required />
+              </div>
+
+              <button type="submit" ng-click="validate_form()" class="btn btn-primary btn-block">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% include ('./partials/footer.html') %>

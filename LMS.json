@@ -1,0 +1,27 @@
+{
+  "booksAvailable": {
+    "list": ["Harry Potter", "Python For Beginners"]
+  },
+  "bookDetails":{
+    "bookOne": {
+      "id": 1001,
+      "Author": "J K Rowling",
+      "Title": "Harry Potter",
+      "Language": "English",
+      "Year": 2005,
+      "ISBN": "1287-asc-82174284",
+      "Price": 70,
+      "Rating": "4/5"
+    },
+    "bookTwo": {
+      "id": 1002,
+      "Author": "Guido Van Russom",
+      "Title": "Python For Beginners",
+      "Language": "English",
+      "Year": 2016,
+      "ISBN": "5387-gev-8ws256",
+      "Price": 100,
+      "Rating": "4.5/5"
+    }
+  }
+}
